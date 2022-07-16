@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*variable declaration*/
+:root {
+    --dark: #34465E;
+    --light: #e2ecf9;
+    --bg-light: #e5e8ed;
+    --mid-light: #bad1f0;
+    --mid: #92bdf5;
+    --mid-dark: #6B90C2;
+    --grey: #646B75;
+    --pop: #F49D7C;
+    --dark-pop: #C8613A;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* header/nav bar styling*/
+header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--dark);
+    color: #fff
+}
+
+.head-name {
+    display: inline-block;
+    font-size: 48px;
+}
+
+/*the following elements style the nav links that are part of the header*/
+nav {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 23px;
+}
+/*list items should not have styles (bullet points)*/
+.nav-ul {
+    list-style-type: none;
+}
+
+/*list items within the header bar should display inline*/
+header li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/*list items should not have standard link styling*/
+.nav-link {
+    color: var(--mid);
+}
+
+.nav-link:hover {
+    color: var(--mid-light)
+}
