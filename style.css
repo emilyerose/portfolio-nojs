@@ -9,7 +9,7 @@
 /*variable declaration*/
 :root {
     --dark: #34465E;
-    --light: #e2ecf9;
+    --light: rgb(226, 236, 249);
     --bg-light: #e5e8ed;
     --mid-light: #bad1f0;
     --mid: #92bdf5;
@@ -17,6 +17,9 @@
     --grey: #646B75;
     --pop: #F49D7C;
     --dark-pop: #C8613A;
+    --section-head-fontsize: 40px;
+    --section-margin: 1.5vw;
+    --vertical-padding: 20px;
 }
 
 body {
@@ -25,7 +28,7 @@ body {
 
 /* header/nav bar styling*/
 header {
-    padding: 20px;
+    padding: var(--vertical-padding);
     background-color: var(--dark);
     color: #fff
 }
@@ -67,7 +70,7 @@ header li {
 .hero {
     height: 150px;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: var(--vertical-padding);
     background-image: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg");
     background-size: cover;
     background-position: 0px -100px;
@@ -78,7 +81,38 @@ header li {
 
 .hero-subtitle {
     position: absolute;
-    z-index: 2;
+    padding: 5px;
     bottom: 10px;
     right: 30px;
+    background-color: var(--light);
+}
+
+#about-me {
+    display: flex;
+}
+
+.section-title {
+    font-size: var(--section-head-fontsize);
+    flex: 1 1 0;
+    text-align: end;
+    color: var(--grey);
+    border-right: medium solid var(--grey);
+    padding-right: var(--section-margin);
+    padding-left: var(--section-margin)
+}
+
+.bio {
+    flex: 4 3 0;
+    color: var(--dark);
+    margin: 0 var(--section-margin) 0 var(--section-margin)
+}
+
+/*puts in vertical padding between paragraphs*/
+.bio p {
+    margin-bottom: var(--vertical-padding);
+}
+
+/*avoids doubling up on margins at the bottom */
+.bio:last-child {
+    margin-bottom: 0px;
 }
