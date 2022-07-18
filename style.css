@@ -12,14 +12,15 @@
     --light: rgb(226, 236, 249);
     --bg-light: #e5e8ed;
     --mid-light: #bad1f0;
-    --mid: #92bdf5;
+    --mid: #9db8db;
     --mid-dark: #6B90C2;
     --grey: #646B75;
     --pop: #F49D7C;
-    --dark-pop: #C8613A;
+    --dark-pop: #a8421c;
     --section-head-fontsize: 40px;
     --section-margin: 1.5vw;
     --vertical-padding: 20px;
+    --line-width: 3px;
 }
 
 body {
@@ -68,7 +69,7 @@ header li {
 
 /*generates a picture that loads below the nav bar*/
 .hero {
-    height: 150px;
+    height: 200px;
     width: 100%;
     margin-bottom: var(--vertical-padding);
     background-image: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg");
@@ -84,35 +85,97 @@ header li {
     padding: 5px;
     bottom: 10px;
     right: 30px;
-    background-color: var(--light);
+    background-color: rgba(226, 236, 249, .7);
 }
 
-#about-me {
+#about-me, #contact-me, #work{
     display: flex;
+    margin-bottom: var(--vertical-padding)
 }
 
 .section-title {
     font-size: var(--section-head-fontsize);
-    flex: 1 1 0;
+    flex: 1 1;
     text-align: end;
     color: var(--grey);
-    border-right: medium solid var(--grey);
+    border-right: var(--line-width) solid var(--grey);
     padding-right: var(--section-margin);
     padding-left: var(--section-margin)
 }
 
-.bio {
-    flex: 4 3 0;
+.section-content {
+    flex: 4 3;
     color: var(--dark);
     margin: 0 var(--section-margin) 0 var(--section-margin)
 }
 
 /*puts in vertical padding between paragraphs*/
-.bio p {
+.bio-paragraph {
     margin-bottom: var(--vertical-padding);
 }
 
-/*avoids doubling up on margins at the bottom */
-.bio:last-child {
+/*avoids doubling up on margins at the bottom of the bio paragraph */
+.bio-paragraph:last-child {
     margin-bottom: 0px;
+}
+
+
+
+.contact-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-links {
+    color: var(--grey);
+    flex: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+.contact-links:hover {
+    color: var(--mid-dark);
+}
+
+.work {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.work-example {
+    position: relative;
+    border: var(--line-width) solid var(--mid);
+    width: 100%;
+    height: 175px;
+}
+.work-example:last-child:nth-child(odd){
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 350px;
+}
+
+.work-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: opacity(.8);
+}
+
+.work-example:hover img {
+    filter: none;
+}
+
+.work-desc {
+    background-color: var(--mid);
+    color: var(--dark);
+    position: absolute;
+    bottom: 20px;
+    padding: 5px 10px; 
+    max-width: 60%;
 }
