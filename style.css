@@ -77,7 +77,6 @@ header li {
     background-position: 0px -100px;
     position: relative;
     background-repeat: no-repeat;
-    filter: opacity(.9) contrast(1.1) brightness(1.15);
 }
 
 .hero-subtitle {
@@ -100,7 +99,8 @@ header li {
     color: var(--grey);
     border-right: var(--line-width) solid var(--grey);
     padding-right: var(--section-margin);
-    padding-left: var(--section-margin)
+    padding-left: var(--section-margin);
+    margin-bottom: var(--vertical-padding);
 }
 
 .section-content {
@@ -119,8 +119,13 @@ header li {
     margin-bottom: 0px;
 }
 
+.bio-img{
+    max-height: 250px;
+    float:left;
+    margin-right: var(--vertical-padding)
+}
 
-
+/*contact me section (links) styling */
 .contact-me {
     display: flex;
     justify-content: space-between;
@@ -133,17 +138,19 @@ header li {
     flex: 1;
     display: inline-block;
     text-align: center;
+    margin: 0 5px var(--vertical-padding) 5px;
 }
 
 .contact-links:hover {
     color: var(--mid-dark);
 }
 
+/*application images styling*/
 .work {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 10px;
-    column-gap: 10px;
+    row-gap: 15px;
+    column-gap: 15px;
 }
 
 .work-example {
@@ -178,4 +185,132 @@ header li {
     bottom: 20px;
     padding: 5px 10px; 
     max-width: 60%;
+}
+
+/*tablet layout changes*/
+@media (max-width: 992px) {
+    /*header/nav bar changes for tablets (yikes)*/
+    header {
+        padding: 0;
+    }
+
+    .head-name {
+        display:block;
+        font-size: 48px;
+        background-color: var(--mid);
+        color: var(--dark);
+        padding: 10px var(--vertical-padding);
+        text-align: center;
+    }
+
+    nav {
+        padding: 15px;
+        display: block;
+        float:unset;
+        margin: 0;
+    }
+    header li {
+        margin: 0;
+    }
+    .nav-link {
+        text-align: center;
+        margin: 0px var(--vertical-padding);
+    }
+    .nav-ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    /*puts section headers above their sections rather than beside them*/
+    #about-me, #contact-me, #work{
+        display: initial;
+        margin-bottom: var(--vertical-padding);
+    }
+    
+    .section-title {
+        text-align: start;
+        block-size: 100%;
+        border-right: none;
+        border-bottom: var(--line-width) solid var(--grey);
+        margin: var(--vertical-padding);
+    }
+    
+    .work {
+        margin: 25px;
+    }
+    
+    .section-content{
+        margin: 0 28px;
+    }
+
+    /*resizes font for application images for non-desktops*/
+    .work-desc {
+        max-width: 80%;
+    }
+
+    .work-desc h2 {
+        font-size: 15px;
+    }
+    .work-desc p {
+        font-size: 12px;
+    }
+}
+
+/*specific media query for my hero image, which gets weird sizing if shrunk below this*/
+@media (max-width:520px) {
+    .hero{
+        background-position: 0px;
+    }
+    .hero-subtitle{
+        position: absolute;
+        left: 50%;
+        right: unset;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+
+    /*undoes grid layout*/
+    .work {
+        display: flex;
+        flex-direction: column;
+    }
+    /* makes the images slightly smaller for mobile*/
+    .work-example{
+        height: 150px;
+    }
+
+    /*separate selector needed because of specificity, probably*/
+    .work-example:last-child:nth-child(odd){
+        height: 150px;
+    }
+    
+    .work-desc {
+        max-width: 50%;
+    }
+    
+    .contact-me {
+        display: initial;
+    }
+    .contact-links {
+        display: block;
+        text-align: start;
+        margin-left: 28px;
+        margin-bottom: 10px;
+    }
+
+    /*put bio image above bio*/
+    .bio-img {
+        float:unset;
+        max-height:unset;
+        max-width:100%;
+        margin: var(--section-margin)
+    }
+
 }
