@@ -15,7 +15,9 @@ The nav bar in the upper right scrolls the user to the appropriate section when 
 The images in the "works" section are all placeholders that would theoretically link to particular github-hosted projects / applications. They have a slight opacity filter applied that vanishes when they are hovered over.
 
 ## Credits
-I used a stack overflow response to absolutely position the subtitle (centered) over the hero image
+I used a stack overflow response to absolutely position the subtitle (centered) over the hero image. 
+
+All of the images used for "works" were either publically licensed NASA photos or my own images.
 
 ## License
 I am still very confused about licensing, to be honest.
